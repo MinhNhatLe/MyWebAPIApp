@@ -16,6 +16,9 @@ builder.Services.AddDbContext<MyDBContext>(options =>
 builder.Services.AddScoped<ILoaiRepository, LoaiRepository>();
 //builder.Services.AddScoped<ILoaiRepository, LoaiRepositoryInMemory>();
 
+builder.Services.AddScoped<IHangHoaResposity, HangHoaRepository>();
+
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
