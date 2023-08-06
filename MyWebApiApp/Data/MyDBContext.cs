@@ -7,6 +7,7 @@ namespace MyWebApiApp.Data
         public MyDBContext(DbContextOptions options) : base(options) { }
 
         #region DbSet
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<NguoiDung> NguoiDungs { get; set; }
         public DbSet<HangHoa> HangHoas { get; set; }
         public DbSet<Loai> Loais { get; set; }
