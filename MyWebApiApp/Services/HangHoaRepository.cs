@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyWebApiApp.Services
 {
-    public class HangHoaRepository : IHangHoaResposity
+    public class HangHoaRepository : IHangHoaRepository
     {
         private readonly MyDBContext _context;
 
@@ -76,7 +76,7 @@ namespace MyWebApiApp.Services
                 MaHangHoa = hh.MaHh,
                 TenHangHoa = hh.TenHh,
                 DonGia = hh.DonGia,
-                TenLoai = hh.Loai?.TenLoai
+                //TenLoai = hh.Loai?.TenLoai
             }).ToList();
         }
     }

@@ -14,12 +14,12 @@ namespace MyWebApiApp.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IHangHoaResposity _hangHoaResposity;
+        private readonly IHangHoaRepository _hangHoaRepository;
         private readonly MyDBContext _context;
 
-        public ProductsController(IHangHoaResposity hangHoaResposity, MyDBContext context)
+        public ProductsController(IHangHoaRepository hangHoaRepository, MyDBContext context)
         {
-            _hangHoaResposity = hangHoaResposity;
+            _hangHoaRepository = hangHoaRepository;
             _context = context;
         }
 
@@ -28,7 +28,7 @@ namespace MyWebApiApp.Controllers
         {
             try
             {
-                var result = _hangHoaResposity.GetAll(search, from, to, sortBy, page);
+                var result = _hangHoaRepository.GetAll(search, from, to, sortBy, page);
                 return Ok(result);
             }
             catch
@@ -36,8 +36,5 @@ namespace MyWebApiApp.Controllers
                 return BadRequest("We can't get the product.");
             }
         }
-
-
-
     }
 }

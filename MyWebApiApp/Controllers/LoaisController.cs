@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyWebApiApp.Data;
 using MyWebApiApp.Models;
@@ -38,6 +39,7 @@ namespace MyWebApiApp.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public IActionResult CreateNew(LoaiModel model)
         {
             try
@@ -57,6 +59,7 @@ namespace MyWebApiApp.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult UpdateLoaiById(LoaiModel model,int id)
         {
             var loai = _context.Loais.FirstOrDefault(lo => lo.MaLoai == id);
@@ -73,6 +76,7 @@ namespace MyWebApiApp.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult DeleteLoaiById(int id)
         {
             var loai = _context.Loais.FirstOrDefault(lo => lo.MaLoai == id);
