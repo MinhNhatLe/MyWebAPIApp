@@ -20,7 +20,7 @@ namespace MyWebApiApp.Services
             _context = context;
         }
 
-        public List<HangHoaModel> GetAll(string search, double? from, double? to, string sortBy, int page = 1)
+        public List<HangHoaModel> GetAll(string? search, double? from, double? to, string? sortBy, int page = 1)
         {
             var allProducts = _context.HangHoas.Include(hh => hh.Loai).AsQueryable();
 
@@ -76,7 +76,7 @@ namespace MyWebApiApp.Services
                 MaHangHoa = hh.MaHh,
                 TenHangHoa = hh.TenHh,
                 DonGia = hh.DonGia,
-                //TenLoai = hh.Loai?.TenLoai
+                TenLoai = hh.Loai?.TenLoai
             }).ToList();
         }
     }

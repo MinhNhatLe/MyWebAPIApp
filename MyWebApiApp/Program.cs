@@ -20,6 +20,7 @@ builder.Services.AddDbContext<MyDBContext>(options =>
 
 builder.Services.AddScoped<ILoaiRepository, LoaiRepository>();
 //builder.Services.AddScoped<ILoaiRepository, LoaiRepositoryInMemory>();
+builder.Services.AddScoped<IHangHoaRepository, HangHoaRepository>();
 
 builder.Services.Configure<AppSetting>(builder.Configuration.GetSection("AppSettings"));
 var secretKey = builder.Configuration["AppSettings:SecretKey"];

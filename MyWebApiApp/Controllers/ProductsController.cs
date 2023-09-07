@@ -24,7 +24,7 @@ namespace MyWebApiApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult GettAllProducts(string search, double? from, double? to, string sortBy, int page = 1)
+        public IActionResult GettAllProducts(string? search, double? from, double? to, string? sortBy, int page = 1)
         {
             try
             {
